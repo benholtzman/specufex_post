@@ -205,6 +205,15 @@ column_title = 'ClusterLbls_NC'+str(Ksave)
 df_tmp = pd.DataFrame({column_title:cluster_labels,'event_ID':cat0['event_ID']}, index = cat0.index)
 cat0c = pd.merge(cat0,df_tmp)
 
+
+path_clustercat = pathProj + f'cat_Clusters_{key}.csv'
+# not sure this is necessary, but keep for now: 
+print('formatting CSV catalog for ',OSflag)
+if OSflag=='linux':
+    cat0c.to_csv(path_clustercat,line_terminator='\n')
+elif OSflag=='mac':
+    cat0c.to_csv(path_clustercat)
+
 # ==================
 sys.exit()
 # ==================
