@@ -3,7 +3,7 @@
 import h5py
 import pandas as pd
 import numpy as np
-from obspy import read
+#from obspy import read
 
 import datetime as dtt
 
